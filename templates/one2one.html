@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One2One Mentoring – SisMentoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background: #faf7fc; }
+        .container { max-width: 700px; margin-top: 50px; }
+        .mentoring-intro { background: linear-gradient(135deg, #560183, #f515b3); color: white; border-radius: 16px; padding: 30px 25px 20px; margin-bottom: 35px; }
+        .mentoring-intro h2 { font-weight: 700; }
+        .form-section { background: white; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); padding: 32px 22px; }
+        .btn-sis { background-color: #f515b3; color: white; border-radius: 30px; font-weight: 600; }
+        .btn-sis:hover { background-color: #c20e8e; }
+        .thanks { color: #560183; font-weight: 700; text-align: center; margin-top: 30px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Explanation Section -->
+    <div class="mentoring-intro text-center">
+        <h2>What is One2One Mentoring?</h2>
+        <p>
+            Our One2One Mentoring is a personal, confidential guidance program for young women and mothers.<br>
+            Here, you can share your challenges, goals, and dreams with a mentor who truly listens.<br>
+            <br>
+            <b>How we do this?</b><br>
+            We connect with you privately via video or WhatsApp call.<br>
+            We help you identify your strengths, plan solutions, and stay motivated.<br>
+            Everything is supportive, judgement-free, and based on Islamic values.
+        </p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+        {% if submitted %}
+            <p class="thanks">Thank you for submitting your information!<br>
+            We will contact you soon via email or WhatsApp.</p>
+        {% else %}
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-sis mt-3">Submit Application</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SisMentoring – Shaping Inner Beauty</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+
+<!-- Navbar with brand and tabs -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm w-100">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="{% static 'images/logo.png' %}" alt="SisMentoring Logo" height="40" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/skill/">Skill</a></li>
+        <li class="nav-item"><a class="nav-link" href="/booking/">One2One</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>SisMentoring</h1>
+  <h4>Shaping Inner Beauty</h4>
+  <p class="quote">“A platform for Sisters to develop life skills, receive one2one mentoring, and grow with confidence, insha'Allah. We provide guidance, support, and a nurturing space through online and offline mentorship.” <br></p>
+</section>
+
+
+
+<!-- Skill Section -->
+
+<section class="container py-5">
+  <h3 class="text-center mb-4" style="color:#560183">From Skill</h3>
+  <div class="post-grid">
+
+    {% for post in skill_posts %}
+      {% if post.slug %}
+        <a href="{% url 'post_detail' slug=post.slug %}" class="post-card text-decoration-none">
+          <img src="{{ post.image.url }}" alt="{{ post.title }}">
+          <div class="post-title">{{ post.title }}</div>
+        </a>
+      {% endif %}
+    {% endfor %}
+
+    
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Blog Section -->
+<section class="container py-5">
+  <h3 class="text-center mb-4" style="color:#f515b3">From Blog</h3>
+  <div class="post-grid">
+
+    {% for post in blog_posts %}
+    {% if post.slug %}
+    <a href="{% url 'post_detail' slug=post.slug %}" class="post-card text-decoration-none">
+      <img src="{{ post.image.url }}" alt="{{ post.title }}">
+      <div class="post-title">{{ post.title }}</div>
+    </a>
+    {% endif %}
+    {% endfor %}  
+
+
+
+  </div>
+</section>
+
+
+
+<!-- Icon Buttons -->
+<div class="icon-links">
+  <a href="/" class="icon-box">
+    <i class="bi bi-house-fill"></i><br>Home
+  </a>
+  <a href="/blog/" class="icon-box">
+    <i class="bi bi-journal-text"></i><br>Blog
+  </a>
+  <a href="/booking/" class="icon-box">
+    <i class="bi bi-person-video2"></i><br>One2One
+  </a>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  &copy; {{ year }} SisMentoring. All rights reserved.
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

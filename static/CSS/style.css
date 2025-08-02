@@ -1,0 +1,134 @@
+/* 👇 All this goes into static/css/style.css */
+
+
+  body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #560183, #f515b3);
+  color: white;
+  min-height: 100vh;
+  }
+
+  .nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+  }
+
+  .nav .brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+
+   
+  }
+
+  .hero h4 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #ffe6fb;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .quote {
+    font-style: italic;
+    color: #fdf1fb;
+    font-size: 1.1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .icon-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+  }
+
+  .icon-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    width: 130px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+  }
+
+  .icon-box:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .icon-box i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    color: #fdd9f4;
+  }
+
+  @media (max-width: 576px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .icon-links {
+      gap: 20px;
+    }
+  }
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.post-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  background: white;
+}
+
+.post-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.post-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.post-title {
+  padding: 10px;
+  font-weight: 600;
+  color: #560183;
+  background: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+

@@ -1,0 +1,30 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Python
+*.pyc
+__pycache__/
+env/
+*.pyo
+*.pyd
+
+# VSCode extensions & settings
+.vscode/
+
+# Windows system folders
+AppData/
+*.jtx
+
+# SQLite DB (optional)
+db.sqlite3
+
+# Cache & logs
+*.log
+*.sqlite3-journal
+
+# Git & deployment
+*.env
+*.bak
+*.zip
+*.tar.gz
