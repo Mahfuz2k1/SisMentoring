@@ -16,8 +16,7 @@ env/
 AppData/
 *.jtx
 
-# SQLite DB (optional)
-db.sqlite3
+
 
 # Cache & logs
 *.log
